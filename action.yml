@@ -23,6 +23,9 @@ inputs:
   ignore_missing_schemas:
     description: "Whether or not to skip custom resources" 
     default: true
+  ignored_filename_patterns:
+    description: "List of regular expressions specifying filenames to ignore"
+    default: ""
 runs:
   using: 'docker'
   image: 'docker://garethr/kubeval:latest'
@@ -31,6 +34,8 @@ runs:
   - ${{ inputs.files }} 
   - -o
   - ${{ inputs.output }}
+  - -i
+  - ${{ inputs.ignored_filename_patterns }}
   - --strict=${{ inputs.strict }}
   - --kubernetes-version
   - ${{ inputs.version }}
