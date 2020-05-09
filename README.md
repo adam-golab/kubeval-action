@@ -28,5 +28,6 @@ passed to the action using `with`.
 | openshift | false | Whether or not to use the OpenShift schemas rather than the upstread Kubernetes ones |
 | strict | true | Whether ot not to fail for additional properties in objects |
 | ignore_missing_schemas | true | Whether to fail if unknown resources are found |
+| ignored_filename_patterns | "" | List of regular expressions specifying filenames to ignore
 | version | master | Which version of Kubernetes to validate against |
 
